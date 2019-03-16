@@ -85,7 +85,7 @@ DBHelper dbHelper;
                 nameList = (EditText) findViewById(R.id.nameList);
 
                 dbHelper = new DBHelper(this);
-
+                //
 
             }
         });
