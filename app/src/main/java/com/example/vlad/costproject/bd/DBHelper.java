@@ -3,6 +3,7 @@ package com.example.vlad.costproject.bd;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.view.View;
 
 public class DBHelper extends SQLiteOpenHelper{
 
@@ -15,7 +16,7 @@ public class DBHelper extends SQLiteOpenHelper{
     public static final String KEY_NAME = "name";
 
 
-    public DBHelper(Context context) {
+    public DBHelper(View.OnClickListener context) {
         super(context,DATEBASE_NAME, null, DATEBASE_VERSION);
     }
 

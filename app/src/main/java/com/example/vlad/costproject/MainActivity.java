@@ -67,6 +67,26 @@ DBHelper dbHelper;
             public void onClick(View v) {
                 Intent intentFastBuy=new Intent(MainActivity.this,FastBuyActivity.class);
                 startActivity(intentFastBuy);
+
+
+
+                //название и удаление листов с покупками
+                setContentView(R.layout.content_buy_list_name);
+
+                buttonNameList = (Button) findViewById(R.id.buttonNameList);
+                buttonNameList.setOnClickListener(this);
+
+                buttonClearList = (Button) findViewById(R.id.buttonClearList);
+                buttonClearList.setOnClickListener(this);
+
+                buttonDeleteList= (Button) findViewById(R.id.buttonDeleteList);
+                buttonDeleteList.setOnClickListener(this);
+
+                nameList = (EditText) findViewById(R.id.nameList);
+
+                dbHelper = new DBHelper(this);
+
+
             }
         });
     }
@@ -140,28 +160,11 @@ DBHelper dbHelper;
         return true;
     }
 
-    //название и удаление листов с покупками
-    @Override
-    protected void onCreate(Bundle savedInstanceState){
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.content_buy_list_name);
 
-        buttonNameList = (Button) findViewById(R.id.buttonNameList);
-        buttonNameList.setOnClickListener(this);
 
-        buttonClearList = (Button) findViewById(R.id.buttonClearList);
-        buttonClearList.setOnClickListener(this);
-
-        buttonDeleteList= (Button) findViewById(R.id.buttonDeleteList);
-        buttonDeleteList.setOnClickListener(this);
-
-        nameList = (EditText) findViewById(R.id.nameList);
-
-        dbHelper = new DBHelper(this);
-    }
 
     @Override
-    public void onClickButtonInListName(View v){
+    public void onClick(View v){
 
         String nameListEdit = nameList.getText().toString();
 
